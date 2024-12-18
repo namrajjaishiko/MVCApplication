@@ -1,0 +1,34 @@
+﻿@using WebApplication1.Models
+@model Persons
+
+<h1>Form</h1>
+<form action="/Home/Myform " method="post">
+    <label asp-for="Name">Name: </label>
+    <input asp-for="Name" type="text"><br><br>
+    <label asp-for="Age">Age:</label>
+    <input asp-for="Age"><br><br>
+    <label asp-for="Address">Address:</label>
+    <input asp-for="Address" ><br><br>
+    <label asp-for="Faculty">Faculty:</label>
+    <input asp-for="Faculty"><br><br>
+    <label asp-for="Email">Email:</label>
+    <input asp-for="Email"><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+@if (Model != null && !string.IsNullOrEmpty(Model.Name))
+{
+    <div class="mt-5">
+        <h2>Submitted Data:</h2>                              
+        <div class="card">
+            <div class="card-body">
+                <p><strong>Name:</strong>@Model.Name</p>
+                <p><strong>Age:</strong>@Model.Age</p>
+                <p><strong>Address:</strong>@Model.Address</p>
+                <p><strong>Faculty:</strong>@Model.Faculty</p>
+                <p><strong>Email:</strong>@Model.Email</p>
+            </div>
+        </div>
+    </div>
+}
+
